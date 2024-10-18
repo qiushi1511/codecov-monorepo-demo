@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v4
 
       - name: Install packagemanager
-        run: corepack prepare
+        run: corepack enable
 
       - name: Install dependencies
         run: pnpm install
