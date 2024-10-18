@@ -1,0 +1,30 @@
+name: apps/docs
+
+on: push
+
+jobs:
+  test:
+    name: Run tests and collect coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+
+      - name: Install packagemanager
+        run: corepack prepare
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run tests
+        run: cd apps/docs && pnpm run test
+
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
