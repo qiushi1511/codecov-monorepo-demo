@@ -1,2 +1,6 @@
 comment:
   require_changes: true
+
+flag_management:
+  default_rules: # the rules that will be followed for any flag added, generally
+    carryforward: true
