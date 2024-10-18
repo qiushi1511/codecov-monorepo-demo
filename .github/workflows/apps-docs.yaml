@@ -1,6 +1,10 @@
 name: apps/docs
 
-on: push
+on:
+  push:
+    paths:
+      - "apps/docs/**"
+      - ".github/workflows/apps-docs.yaml"
 
 jobs:
   test:

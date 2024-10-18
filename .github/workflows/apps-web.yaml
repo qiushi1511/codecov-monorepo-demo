@@ -1,6 +1,10 @@
 name: apps/web
 
-on: push
+on:
+  push:
+    paths:
+      - "apps/web/**"
+      - ".github/workflows/apps-web.yaml"
 
 jobs:
   test:
