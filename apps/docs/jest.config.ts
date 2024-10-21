@@ -27,6 +27,15 @@ const config: Config = {
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
 
+  collectCoverageFrom: [
+    "**/*.{ts,tsx,s,mjs,mts}",
+    "!jest.config.ts",
+    "!next.config.mjs",
+    "!**/*.d.ts",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+  ],
+
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
 
@@ -39,7 +48,7 @@ const config: Config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  coverageProvider: "babel",
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
